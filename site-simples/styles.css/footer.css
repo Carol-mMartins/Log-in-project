@@ -1,0 +1,7 @@
+.footer__container {
+    align-items: center;
+    font-family: var(--fourth-font);
+    font-size: 20px;
+    padding: 2em;
+    color: var(--branco);
+}

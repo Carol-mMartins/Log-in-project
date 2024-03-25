@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <title>LogIn</title>
+</head>
+<body>
+    <header>
+        <section class="toggle">
+            <input type="checkbox" id="checkbox" class="checkbox">
+            <label for="checkbox"></label>
+        </section>
+        <div class="header-icons">
+        </div>
+    </header>
+    <main>
+        <div class="wrapper card" id="card">
+            <div class="border-overlay"></div>
+            <div class="form-wrapper sign-in">
+                <form action="">
+                    <h2 class="signIn-title">Entrar</h2>
+                    <div class="input-group">
+                        <input type="text" required>
+                        <label for="">Usuário</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" required>
+                        <label for="">Senha</label>
+                    </div>
+                    <div class="remember">
+                        <label><input type="checkbox">Lembrar meu login</label>
+                    </div>
+                    <button class="signUp__button" type="submit">Entrar</button>
+                    <div class="signUp-link">
+                        <p>Não tem uma conta?<a href="#" class="signUp__Btn-link">Criar Conta</a></p>
+                    </div>
+                    <div class="social-plataform">
+                        <p>Ou entre usando:</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icons__link"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="social-icons__link"><i class="fa-brands fa-google"></i></a>
+                            <a href="#" class="social-icons__link"><i class="fa-brands fa-discord"></i></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-wrapper sign-up">
+                <form action="">
+                    <h2 class="signIn-title">Criar Conta</h2>
+                    <div class="input-group">
+                        <input type="text" required>
+                        <label for="">Usuário</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" required>
+                        <label for="">Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" required>
+                        <label for="">Senha</label>
+                    </div>
+                    <div class="remember">
+                        <label><input type="checkbox">Eu declaro que li e concordo com os termos e condições</label>
+                    </div>
+                    <button class="signUp__button" type="submit">Registrar</button>
+                    <div class="signUp-link">
+                        <p>Já tem uma conta?<a href="#" class="signIn__Btn-link">Entrar</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="footer__container">
+        <p>Projeto realizado por Bruno M. Rezende e Carolina M. Martins.</p>
+         <p>Supervisionado por Pedro Guilherme B. W. da Silva</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

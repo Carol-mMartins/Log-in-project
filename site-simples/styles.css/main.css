@@ -1,0 +1,164 @@
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background: rgba(255, 255, 255, .2);
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, .1);
+    padding: 40px;
+}
+.form-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    
+}
+.wrapper.active .form-wrapper.sign-in {
+    transform: scale(0);
+    opacity: 0;
+}
+.wrapper .form-wrapper.sign-up {
+    position: absolute;
+    top: 0;
+    transform: scale(0);
+    width: 100px;
+}
+.wrapper.active .form-wrapper.sign-up {
+    transform: scale(1);
+    opacity: 1;
+    width: 100px;
+} 
+.signIn-title {
+    font-family: var(--fourth-font);
+    font-size: 35px;
+    color: var(--branco);
+    text-align: center;
+}
+.input-group {
+    position: relative;
+    margin: 30px 0;
+    border-bottom: 2px solid var(--branco);
+}
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--branco);
+    pointer-events: none;
+    transition: .5s;
+}
+.input-group input {
+    width: 320px;
+    height: 40px;
+    font-size: 16px;
+    color: var(--branco);
+    padding: 0 5px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.input-group input:focus~label,
+.input-group input:valid~label {
+    top: -5px;
+
+}
+.remember {
+    margin: -5px 0 15px 5px;
+}
+.remember label {
+    color: var(--branco);
+    font-size: 14px;
+}
+.remember label input {
+    accent-color: var(--vermelho);
+}
+button {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    color: var(--branco);
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+.signUp__button {
+    background-color: var(--vermelho);
+    transition: background-color 0.01s ease;
+}
+.signUp__button:hover {
+    background-color: var(--vermelho-hover);
+}
+body.dark-mode .signUp__button {
+    background-color: var(--cinza-escuro);
+}
+body.dark-mode .signUp__button:hover {
+    background-color: var(--cinza);
+}
+.signUp-link {
+    font-size: 14px;
+    text-align: center;
+    margin: 15px 0;
+}
+.signUp-link p {
+    color: var(--branco);
+}
+.signUp-link p a {
+    color: var(--vermelho);
+    text-decoration: none;
+    font-weight: 500;
+}
+.signUp__Btn-link {
+    margin-left: 5px;
+}
+.signIn__Btn-link {
+    margin-left: 5px
+}
+.signUp-link p a:hover {
+    text-decoration: underline;
+}
+body.dark-mode .signUp-link p a {
+    color: var(--preto);
+}
+.social-plataform {
+    font-size: 14px;
+    color: var(--branco);
+    text-align: center;
+}
+.fa-brands {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: 1px solid var(--branco);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    margin: 15px 6px 0;
+    transition: .3s;
+}
+.social-icons a i {
+    color: var(--branco);
+    font-size: 14px;
+    transition: .3s;
+}
+.social-icons a:hover i {
+    color: rgb(0, 0, 0, .3);
+}
+
+@media (max-width: 420px) {
+    .wrapper {
+        width: 350px;
+        height: 450px;
+        padding: 15px;
+    }
+    .form-wrapper {
+        width: 100px;
+        height: -50px; 
+    }
+}
