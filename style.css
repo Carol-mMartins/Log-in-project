@@ -1,0 +1,35 @@
+@import url("/styles.css/darkmode.css");
+@import url("styles.css/header.css");
+@import url("/styles.css/main.css");
+@import url("/styles.css/footer.css");
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Nanum+Gothic+Coding&family=Poppins:wght@400;600;700&family=Vujahday+Script&display=swap');
+
+:root{
+    --principal-font: Poppins;
+    --sec-font: Nanum Gothic Coding;
+    --terc-font: Vujahday Script;
+    --fourth-font: Indie Flower;
+    --branco: #fff;
+    --vermelho: #f4157e;
+    --vermelho-hover: #f15a96;
+    --cinza-escuro: #1d1d1d;
+    --cinza: #bebebe;
+    --preto: #000;
+    --background-light: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    --background-dark: linear-gradient(to right, #1f1920, #000000, #160e1b);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--principal-font);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}

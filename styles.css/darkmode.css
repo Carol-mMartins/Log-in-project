@@ -1,0 +1,95 @@
+.toggle {
+    margin: 20px; /* Adiciona uma margem à direita do toggle */
+}
+
+.checkbox {
+    display: none; /* Esconde o checkbox */
+}
+
+.checkbox + label::before {
+    content: "";
+    display: inline-block;
+    width: 55px; /* Largura do toggle */
+    height: 30px; /* Altura do toggle */
+    background: linear-gradient(to bottom, #f0ebf7, #ebaaff); /* Cor de fundo padrão */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.363),
+    inset 4px 4px rgb(211, 122, 223),
+    inset -4px 4px rgb(207, 110, 219);
+    border-radius: 25px; /* Bordas arredondadas */
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.checkbox:checked + label::before {
+    /*background: #2b2b2b; /* Altera a cor de fundo quando o checkbox é marcado */
+    background: linear-gradient(to bottom, #444, #222);
+    border-radius: 160px;
+    transform: scale(0.9);
+    transition: 0.5s;
+    box-shadow: 0 8px 40px rgb(43, 248, 255),
+                inset 4px 4px rgba(29, 27, 27, 0.2),
+                inset -4px 4px rgba(255, 255, 255, 0.2);
+}
+
+.checkbox + label::after {
+    content: "";
+    display: inline-block;
+    width: 24px; /* Largura do botão do toggle */
+    height: 24px; /* Altura do botão do toggle */
+    background: #fdd2ff; /* Cor do botão do toggle */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.767),
+        inset 4px 4px rgba(255, 244, 254, 0.705),
+        inset -4px 4px rgba(216, 89, 216, 0);
+    border-radius: 50%; /* Transforma o botão do toggle em um círculo */
+    position: absolute;
+    top: 23px; /* Posicionamento vertical do botão do toggle */
+    left: 20px; /* Posicionamento horizontal do botão do toggle */
+    transition: left 0.5s; /* Adiciona uma transição suave para o movimento do botão */
+}
+
+.checkbox:checked + label::after {
+    left: calc(50px - 3px); /* Move o botão do toggle para a direita quando o checkbox é marcado */
+    background: #202020;
+    box-shadow: 0 8px 20px rgba(115, 212, 212, 0.781),
+    inset -4px 4px rgba(12, 12, 12, 0.699);
+}
+body:not(.dark-mode) {
+    background: var(--background-light);
+    color: var(--preto);
+    transition: left 0.5s ease;
+}
+body.dark-mode {
+    background: var(--background-dark);
+    color: var(--branco);
+}
+button.dark-mode {
+    color: var(--preto);
+}
+@keyframes shadow-rotation {
+    0% {
+        box-shadow: 0 0 60px rgb(149, 255, 255); /* Sombra visível */
+    }
+    20% {
+        box-shadow: 0 0 60px rgba(149, 177, 255, 0.6), /* Opacidade reduzida */
+                    0px 0 60px rgb(173, 154, 255); /* Opacidade reduzida */
+    }
+    40% {
+        box-shadow: 0 0 60px rgba(225, 149, 255, 0.3), /* Opacidade reduzida */
+                    0px 0 60px rgb(255, 154, 213); /* Opacidade reduzida */
+    }
+    60% {
+        box-shadow: 0 0 60px rgba(229, 100, 255, 0.527), /* Sombra transparente */
+                    0px 0 60px rgb(154, 255, 176); /* Sombra transparente */
+    }
+    80% {
+        box-shadow: 0 0 60px rgba(255, 248, 156, 0.623), /* Opacidade reduzida */
+                    0px 0 60px rgb(255, 243, 140); /* Opacidade reduzida */
+    }
+    100% {
+        box-shadow: 0 0 60px rgb(149, 255, 255); /* Sombra visível */
+    }
+}
+body.dark-mode .card {
+    animation: shadow-rotation 3s infinite linear;
+}
