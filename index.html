@@ -22,14 +22,16 @@
         <div class="wrapper card" id="card">
             <div class="border-overlay"></div>
             <div class="form-wrapper sign-in">
-                <form action="">
+                <form action="/login" method="POST" id="login-form">
                     <h2 class="signIn-title">Entrar</h2>
                     <div class="input-group">
                         <input type="text" id="usernameInput" required>
                         <label for="">Usuário</label>
                     </div>
                     <div class="input-group">
-                        <input type="password" id="passwordInput" required>
+                        <input type="password" id="passwordInputSignin" class="password__signin">
+                        <i class="fa-solid fa-eye" id="togglePassword__signin"></i>
+                        <i class="fa-solid fa-eye-slash" id="togglePasswordOff__signin" style="display: none;"></i>
                         <label for="">Senha</label>
                     </div>
                     <div class="remember">
@@ -51,7 +53,7 @@
             </div>
 
             <div class="form-wrapper sign-up">
-                <form action="">
+                <form action="/login" method="POST" id="login-form">
                     <h2 class="signIn-title">Criar Conta</h2>
                     <div class="input-group">
                         <input type="text" id="usernameInput" required>
@@ -62,7 +64,9 @@
                         <label for="">Email</label>
                     </div>
                     <div class="input-group">
-                        <input type="password" id="passwordInput" required>
+                        <input type="password" id="passwordInputSignup" class="password__signup" required>
+                        <i class="fa-solid fa-eye" id="togglePassword__signup"></i>
+                        <i class="fa-solid fa-eye-slash" id="togglePasswordOff__signup" style="display: none;"></i>
                         <label for="">Senha</label>
                     </div>
                     <div class="remember">
@@ -72,6 +76,7 @@
                     <div class="signUp-link">
                         <p>Já tem uma conta?<a href="#" class="signIn__Btn-link">Entrar</a></p>
                     </div>
+                    <div class="register-message" id="message"></div>
                 </form>
             </div>
         </div>

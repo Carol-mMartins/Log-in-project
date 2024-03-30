@@ -66,8 +66,22 @@
     top: -5px;
 
 }
+.fa-eye {
+    position: absolute;
+    right: 4%;
+    top: 28%;
+    cursor: pointer;
+    color: darkmagenta;
+}
+.fa-eye-slash {
+    position: absolute;
+    right: 4%;
+    top: 28%;
+    cursor: pointer;
+    color: darkmagenta;
+}
 .remember {
-    margin: -5px 0 15px 5px;
+    margin: -5px 0px 15px 5px;
 }
 .remember label {
     color: var(--branco);

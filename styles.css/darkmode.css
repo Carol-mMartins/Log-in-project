@@ -68,28 +68,44 @@ button.dark-mode {
 }
 @keyframes shadow-rotation {
     0% {
-        box-shadow: 0 0 60px rgb(149, 255, 255); /* Sombra visível */
+        box-shadow: 0 0 60px rgba(183, 255, 149, 0.712),
+                    0 0 60px rgb(183, 255, 149), /* Sombra visível */
+                    0 0 60px rgba(183, 255, 149, 0.712);
     }
     20% {
-        box-shadow: 0 0 60px rgba(149, 177, 255, 0.6), /* Opacidade reduzida */
-                    0px 0 60px rgb(173, 154, 255); /* Opacidade reduzida */
+        box-shadow: 0 0 60px rgba(149, 177, 255, 0.712), /* Opacidade reduzida */
+                    0px 0 60px rgb(173, 154, 255), /* Opacidade reduzida */
+                    0 0 60px rgba(149, 177, 255, 0.712);
     }
     40% {
-        box-shadow: 0 0 60px rgba(225, 149, 255, 0.3), /* Opacidade reduzida */
-                    0px 0 60px rgb(255, 154, 213); /* Opacidade reduzida */
+        box-shadow: 0 0 60px rgba(225, 149, 255, 0.712), /* Opacidade reduzida */
+                    0px 0 60px rgb(255, 154, 213), /* Opacidade reduzida */
+                    0 0 60px rgba(225, 149, 255, 0.712);
     }
     60% {
-        box-shadow: 0 0 60px rgba(229, 100, 255, 0.527), /* Sombra transparente */
-                    0px 0 60px rgb(154, 255, 176); /* Sombra transparente */
+        box-shadow: 0 0 60px rgba(229, 100, 255, 0.712), /* Sombra transparente */
+                    0px 0 60px rgb(154, 255, 176), /* Sombra transparente */
+                    0 0 60px rgba(229, 100, 255, 0.712);
     }
     80% {
-        box-shadow: 0 0 60px rgba(255, 248, 156, 0.623), /* Opacidade reduzida */
-                    0px 0 60px rgb(255, 243, 140); /* Opacidade reduzida */
+        box-shadow: 0 0 60px rgba(255, 248, 156, 0.712), /* Opacidade reduzida */
+                    0px 0 60px rgb(255, 243, 140), /* Opacidade reduzida */
+                    0 0 60px rgba(255, 248, 156, 0.712);
     }
     100% {
-        box-shadow: 0 0 60px rgb(149, 255, 255); /* Sombra visível */
+        box-shadow: 0 0 60px rgba(149, 255, 255, 0.712), /* Sombra visível */
+                    0 0 60px rgb(149, 255, 255),
+                    0 0 60px rgba(149, 255, 255, 0.712);
     }
 }
 body.dark-mode .card {
     animation: shadow-rotation 3s infinite linear;
+}
+
+body.dark-mode .fa-eye {
+    color: lightgray;
+}
+
+body.dark-mode .fa-eye-slash {
+    color: lightgray;
 }

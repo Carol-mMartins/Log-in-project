@@ -11,22 +11,95 @@ checkbox.addEventListener('change', function() {
     }
 });
 
-const signUpBtnLink = document.querySelector('.signUp__Btn-link');
-const signInBtnLink = document.querySelector('.signIn__Btn-link');
-const wrapper = document.querySelector('.wrapper');
+const passwordFieldSignin = document.getElementById('passwordInputSignin');
+const togglePasswordSignin = document.getElementById('togglePassword__signin');
+const togglePasswordSigninOff = document.getElementById('togglePasswordOff__signin');
 
-signUpBtnLink.addEventListener('click', () =>{
-    wrapper.classList.toggle('active')
+togglePasswordSignin.addEventListener('click', function() {
+    if (passwordFieldSignin.type === 'password') {
+        passwordFieldSignin.type = 'text';
+        togglePasswordSignin.style.display = 'none';
+        togglePasswordSigninOff.style.display = 'block';
+    } else {
+        passwordFieldSignin.type = 'password';
+        togglePasswordSignin.style.display = 'block';
+        togglePasswordSigninOff.style.display = 'none';
+    }
 });
-signInBtnLink.addEventListener('click', () =>{
-    wrapper.classList.toggle('active')
+
+togglePasswordSigninOff.addEventListener('click', function() {
+    if (passwordFieldSignin.type === 'text') {
+        passwordFieldSignin.type = 'password';
+        togglePasswordSignin.style.display = 'block';
+        togglePasswordSigninOff.style.display = 'none';
+    } else {
+        passwordFieldSignin.type = 'text';
+        togglePasswordSignin.style.display = 'none';
+        togglePasswordSigninOff.style.display = 'block';
+    }
 });
+
+const passwordFieldSignup = document.getElementById('passwordInputSignup');
+const togglePasswordSignup = document.getElementById('togglePassword__signup');
+const togglePasswordSignupOff = document.getElementById('togglePasswordOff__signup');
+
+togglePasswordSignup.addEventListener('click', function() {
+    if (passwordFieldSignup.type === 'password') {
+        passwordFieldSignup.type = 'text';
+        togglePasswordSignup.style.display = 'none';
+        togglePasswordSignupOff.style.display = 'block';
+    } else {
+        passwordFieldSignup.type = 'password';
+        togglePasswordSignup.style.display = 'block';
+        togglePasswordSigupnOff.style.display = 'none';
+    }
+});
+
+togglePasswordSignupOff.addEventListener('click', function() {
+    if (passwordFieldSignup.type === 'text') {
+        passwordFieldSignup.type = 'password';
+        togglePasswordSignup.style.display = 'block';
+        togglePasswordSignupOff.style.display = 'none';
+    } else {
+        passwordFieldSignup.type = 'text';
+        togglePasswordSignup.style.display = 'none';
+        togglePasswordSignupOff.style.display = 'block';
+    }
+});
+
+document.querySelector('.signUp__Btn-link').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.querySelector('.wrapper').classList.add('active');
+});
+
+document.querySelector('.signIn__Btn-link').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.querySelector('.wrapper').classList.remove('active');
+});
+
+function exibirMensagem(mensagem, tipo) {
+    const mensagemElement = document.getElementById('message');
+    mensagemElement.textContent = mensagem;
+
+    if (tipo === "sucesso") {
+        mensagemElement.classList.add('sucesso');
+    } else if (tipo === "erro") {
+        mensagemElement.classList.add('erro');
+    }
+
+    // Exibir a mensagem por alguns segundos e depois removê-la
+    setTimeout(() => {
+        mensagemElement.textContent = '';
+        mensagemElement.classList.remove('sucesso', 'erro');
+    }, 10000); // Remover após 10 segundos
+}
+
 
 document.getElementById('signInBtn').addEventListener('click', function(event){
     event.preventDefault();
 
     const username = document.getElementById('usernameInput').value;
-    const password = document.getElementById('passwordInput').value;
+    const password = document.getElementById('passwordInputSignin').value;
 
     // URL do endpoint de login no backend
     const loginEndpoint = "/api/login";
@@ -62,11 +135,11 @@ document.getElementById('signUpBtn').addEventListener('click', function(event) {
 
     const username = document.getElementById('usernameInput').value;
     const email = document.getElementById('emailInput').value;
-    const password = document.getElementById('passwordInput').value;
+    const password = document.getElementById('passwordInputSignup').value;
     const termsChecked = document.getElementById('termsCheckbox').checked;
 
     if (!termsChecked) {
-        alert("Você precisa concordar com os termos e condições.");
+        exibirMensagem("Você precisa concordar com os termos e condições.");
         return;
     }
 
@@ -85,6 +158,7 @@ document.getElementById('signUpBtn').addEventListener('click', function(event) {
     })
     .then(response => {
         if (response.ok) {
+            exibirMensagem("Usuário registrado com sucesso.", "sucesso");
             window.location.href = '/profile';
         } else {
             return response.json().then(data => {
@@ -93,6 +167,6 @@ document.getElementById('signUpBtn').addEventListener('click', function(event) {
         }
     })
     .catch(error => {
-        alert('Algo deu errado ao registrar, por favor tente novamente' + error.message);
+        exibirMensagem('Algo deu errado ao registrar, por favor tente novamente' + error.message);
     });
 });
